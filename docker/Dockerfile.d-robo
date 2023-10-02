@@ -2,6 +2,6 @@ ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
 RUN apt-get install libusb-1.0-0-dev
-RUN git clone https://d-robo-ynct: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@github.com/nityc-d-robo/usb_connect.git && cd usb_connect && mkdir build && cd build && cmake .. && make install
-RUN git clone https://d-robo-ynct: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@github.com/nityc-d-robo/motor_lib.git && cd motor_lib && mkdir build && cd build && cmake .. && make install
+RUN git clone https://github.com/nityc-d-robo/usb_connect.git && cd usb_connect && mkdir build && cd build && cmake .. && make install
+RUN git clone https://github.com/nityc-d-robo/motor_lib.git && cd motor_lib && mkdir build && cd build && cmake .. && make install
 
