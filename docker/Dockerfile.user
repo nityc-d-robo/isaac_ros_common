@@ -10,7 +10,7 @@ ARG BASE_IMAGE
 FROM ${BASE_IMAGE}
 
 # Setup non-root admin user
-ARG USERNAME=admin
+ARG USERNAME=root
 ARG USER_UID=0
 ARG USER_GID=1000
 
