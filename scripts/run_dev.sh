@@ -178,6 +178,7 @@ fi
 # Run container from image
 print_info "Running $CONTAINER_NAME"
 docker run -it --rm \
+    -u 0 \
     --privileged \
     --network host \
     ${DOCKER_ARGS[@]} \
@@ -186,7 +187,7 @@ docker run -it --rm \
     -v /etc/localtime:/etc/localtime:ro \
     --name "$CONTAINER_NAME" \
     --runtime nvidia \
-    --user="admin" \
+    --user="root" \
     --entrypoint /usr/local/bin/scripts/workspace-entrypoint.sh \
     --workdir /workspaces/isaac_ros-dev \
     $@ \
