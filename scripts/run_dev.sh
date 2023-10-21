@@ -96,9 +96,9 @@ BASE_NAME="isaac_ros_dev-$PLATFORM"
 CONTAINER_NAME="$BASE_NAME-container"
 
 # Remove any exited containers.
-if [ "$(docker ps -a --quiet --filter status=exited --filter name=$CONTAINER_NAME)" ]; then
-    docker rm $CONTAINER_NAME > /dev/null
-fi
+#if [ "$(docker ps -a --quiet --filter status=exited --filter name=$CONTAINER_NAME)" ]; then
+#    docker rm $CONTAINER_NAME > /dev/null
+#fi
 
 # Re-use existing container.
 if [ "$(docker ps -a --quiet --filter status=running --filter name=$CONTAINER_NAME)" ]; then
@@ -124,7 +124,7 @@ if [[ ! -z "${IMAGE_KEY}" ]]; then
 fi
 
 print_info "Building $BASE_IMAGE_KEY base as image: $BASE_NAME using key $BASE_IMAGE_KEY"
-$ROOT/build_base_image.sh $BASE_IMAGE_KEY $BASE_NAME '' '' ''
+# $ROOT/build_base_image.sh $BASE_IMAGE_KEY $BASE_NAME '' '' ''
 
 if [ $? -ne 0 ]; then
     print_error "Failed to build base image: $BASE_NAME, aborting."
